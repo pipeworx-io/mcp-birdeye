@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-birdeye",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Birdeye MCP — wraps Birdeye Data Services (birdeye.so)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-birdeye": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "birdeye"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-birdeye.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/birdeye",
   "pipeworx": {
-    "sourceHash": "v1-0e8eb09bbe92f52acf2f2ad36bdb529dd91290b3022f07b8eddd452547a9ee9f",
-    "sourceCommit": "70a4e816a9195016cd4af92dca2019485d4c3865"
+    "mode": "gateway",
+    "slug": "birdeye",
+    "gatewaySlug": "birdeye",
+    "sourceHash": "v1-5b23d3e1d2dd3a980de1991961f025b90624ce5f472cb0b8a125460c564b043b",
+    "sourceCommit": "4277282d72f9bf55e548b3799aaf737baf22152f"
   }
 }

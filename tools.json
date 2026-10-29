@@ -1,0 +1,121 @@
+[
+  {
+    "name": "birdeye_token_overview",
+    "description": "Token overview — price, liquidity, volume for token X. Returns market cap, 24h price change, and holder count for a Solana (or multichain) token by contract address. Example: birdeye_token_overview({ address: \"So11111111111111111111111111111111111111112\", chain: \"solana\", _apiKey: \"your-key\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Token contract/mint address, e.g. \"So11111111111111111111111111111111111111112\" (wrapped SOL) on Solana, or a 0x address on an EVM chain."
+        },
+        "chain": {
+          "type": "string",
+          "description": "Blockchain to query (sent as the x-chain header). Defaults to \"solana\". Examples: \"solana\", \"ethereum\", \"base\", \"bsc\", \"polygon\"."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Birdeye API key (get one at birdeye.so; limited free tier)."
+        }
+      },
+      "required": [
+        "address",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "birdeye_token_holders",
+    "description": "Top holders of token X. Returns the largest wallet holders of a token (owner address, token amount, and share of supply) by contract address. Example: birdeye_token_holders({ address: \"So11111111111111111111111111111111111111112\", limit: 20, chain: \"solana\", _apiKey: \"your-key\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Token contract/mint address."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of top holders to return (1–50, default 50)."
+        },
+        "chain": {
+          "type": "string",
+          "description": "Blockchain to query (sent as the x-chain header). Defaults to \"solana\"."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Birdeye API key (get one at birdeye.so; limited free tier)."
+        }
+      },
+      "required": [
+        "address",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "birdeye_token_trades",
+    "description": "Recent DEX trades for token X. Returns the latest on-chain swap transactions for a token (side, amounts, price, trader, timestamp) by contract address. Example: birdeye_token_trades({ address: \"So11111111111111111111111111111111111111112\", limit: 20, chain: \"solana\", _apiKey: \"your-key\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Token contract/mint address."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of recent trades to return (1–50, default 50)."
+        },
+        "chain": {
+          "type": "string",
+          "description": "Blockchain to query (sent as the x-chain header). Defaults to \"solana\"."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Birdeye API key (get one at birdeye.so; limited free tier)."
+        }
+      },
+      "required": [
+        "address",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "birdeye_gainers_losers",
+    "description": "Top trader gainers/losers. Returns the ranked list of wallets by realized/unrealized PnL over a time window (yesterday/today/1W/30d/90d). Example: birdeye_gainers_losers({ type: \"1W\", sort_by: \"PnL\", chain: \"solana\", _apiKey: \"your-key\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Time window for PnL ranking: \"yesterday\", \"today\", \"1W\", \"30d\", or \"90d\". Defaults to \"1W\"."
+        },
+        "sort_by": {
+          "type": "string",
+          "description": "Ranking metric: \"PnL\", \"realized_pnl\", or \"unrealized_pnl\". Defaults to \"PnL\"."
+        },
+        "sort_type": {
+          "type": "string",
+          "description": "\"desc\" (top gainers, default) or \"asc\" (top losers)."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of traders to return (1–50, default 20)."
+        },
+        "chain": {
+          "type": "string",
+          "description": "Blockchain to query (sent as the x-chain header). Defaults to \"solana\"."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Birdeye API key (get one at birdeye.so; limited free tier)."
+        }
+      },
+      "required": [
+        "_apiKey"
+      ]
+    }
+  }
+]
