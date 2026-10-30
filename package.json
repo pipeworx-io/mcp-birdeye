@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-birdeye",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Birdeye MCP — wraps Birdeye Data Services (birdeye.so)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "birdeye",
     "gatewaySlug": "birdeye",
-    "sourceHash": "v1-5b23d3e1d2dd3a980de1991961f025b90624ce5f472cb0b8a125460c564b043b",
-    "sourceCommit": "4277282d72f9bf55e548b3799aaf737baf22152f"
+    "sourceHash": "v1-be31af914d5d345ad1536b1ab6332eabeca0e6a419866c03b722c87939cbba49",
+    "sourceCommit": "5cb09714e895571153f3d9663c36ff0f140cadd6"
   }
 }
